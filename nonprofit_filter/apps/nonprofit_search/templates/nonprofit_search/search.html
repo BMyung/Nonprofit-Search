@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Nonprofits</title>
+</head>
+<body>
+        <h2>Search for an organization</h2>
+        <h4>Complete any of the fields below to find matching nonprofit organizations</h4>
+    <form action="/search_results" method = "GET">
+        {% csrf_token %}
+    <p>Name or Keyword:</p>
+    <p><input type ="text" name = "name"></p>
+    <p>City:</p>
+    <p><input type ="text" name = "city"></p>
+    <p>State:</p>
+    <p><input type ="text" name = "state"></p>
+    <p>EIN:</p>
+    <p><input type ="text" name = "ein"></p>
+
+    <p>Impact Area</p>
+    <select name = "category">
+        <option value=""> -- select an option -- </option>
+        {% for category in categories %}
+        <option value={{category.categoryID}}>{{category.categoryName }}</option></li>
+            <ul>{% for cause in category.causes %}
+                <li>{{cause.causeName}}</li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+    </select>
+<p></p>
+<p></p>
+<p></p>
+<input type = "submit" value="Submit">
+</form>
+</body>
+</html>

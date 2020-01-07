@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nonprofit Details</title>
+</head>
+<body>
+    <h2>{{c_nav_nonprofit.charityName}}</h2>
+    <h3>{{c_nav_nonprofit.nteeType}}</h3>
+    {% if c_nav_nonprofit.tagline != None %}
+    <h3>Tagline: {{c_nav_nonprofit.tagLine}}</h3>
+    {% endif %}
+    {% if c_nav_nonprofit.mission != None %}
+    <h3>Mission: {{c_nav_nonprofit.mission}}</h3>
+    {% endif %}
+    <h4>{{c_nav_nonprofit.mailingAddress.streetAddress1}}</h4>
+    {% if c_nav_nonprofit.mailingAddress.streetAddress2 != None %}
+    <h4>{{c_nav_nonprofit.mailingAddress.streetAddress2}}</h4>
+    {% endif %}
+    <h4>{{c_nav_nonprofit.mailingAddress.city}}, {{c_nav_nonprofit.mailingAddress.stateOrProvince}}</h4>
+    <h4>Website Url</h4>
+    <h4>EIN: {{np_ein}}</h4>
+    <div>
+    Financial Information:
+
+    Total revenue:
+    {{pro_nonprofit.filings_with_data.0.tax_prd_yr}}: {{pro_nonprofit.filings_with_data.0.totrevenue}}: 
+    {{pro_nonprofit.filings_with_data.1.tax_prd_yr}}: {{pro_nonprofit.filings_with_data.1.totrevenue}}: 
+    {{pro_nonprofit.filings_with_data.2.tax_prd_yr}}: {{pro_nonprofit.filings_with_data.2.totrevenue}}: 
+    
+
+</div>
+{% if nonprofit in user.nonprofits.all %}
+<div id="remove_user">
+    <a href="/remove/{{np_ein}}">Click here to remove this nonprofit from your list</a></div>
+{% else %}
+    <div id="add_user">
+        <a href="/add/{{np_ein}}">Click here to add this nonprofit to your list</a></div>
+{% endif %}
+<p>Charity Navigator rating</p>
+</body>
+</html>

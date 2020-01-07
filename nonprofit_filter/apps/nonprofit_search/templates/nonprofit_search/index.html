@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+Welcome to Nonprofit Search!
+
+Register or login to access
+
+
+<div id="registration">
+        <h3>Registration!</h3>
+        <form action="/register" method="POST">
+            {% csrf_token %}
+            <p>First name</p>
+            <p><input type="text" name="f_name"></p>
+            <p>Last name</p>
+            <p><input type="text" name="l_name"></p>
+            <p>Email</p>
+            <p><input type="email" name="email"></p>
+            <p>Password</p>
+            <p><input type="password" name="password"></p>
+            <p>Confirm Password</p>
+            <p><input type="password" name="confirm_password"></p>
+            <p></p>
+            <p><input type="submit" name="button" value="Register"></p>
+        </form>
+    </div>
+    <div id="login">
+        <h3>Login</h3>
+        <form action="/login" method="POST">
+            {% csrf_token %}
+            <p>Email</p>
+            <p><input type="email" name="log_email"></p>
+            <p>Password</p>
+            <p><input type="password" name="log_password"></p>
+            <p></p>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    
+</div>
+
+</body>
+</html>

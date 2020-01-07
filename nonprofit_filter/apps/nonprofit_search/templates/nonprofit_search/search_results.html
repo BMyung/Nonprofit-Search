@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Results</title>
+</head>
+<body>
+    <ol>
+        {% if message %}
+        <h2>{{message}}</h2>
+        <a href="/search">Search Results</a>
+        {% else %}
+            {% for nonprofit in nonprofit_list %}
+            <h3><li>{{nonprofit.charityName}}</h3></li>
+                <ul>
+                    <li><p>IRS Classificiation: {{nonprofit.irsClassification.nteeClassification}}</p></li>
+                    <li><p>{{nonprofit.mailingAddress.streetAddress1}}</p></li>
+                    <li><p>{{nonprofit.mailingAddress.city}}, nonprofit.mailingAddress.stateOrProvince}}</p></li>
+                    <li><p>Tax ID/EIN: {{nonprofit.ein}}</p></li>
+                    <li><a href="/details/{{nonprofit.ein}}">Click here for organization details</a></li>
+                </ul>
+        {% endfor %} 
+        {% endif %}
+    </ol>
+</body>
+</html>

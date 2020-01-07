@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Nonprofit Search</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'nonprofit_search/img/favicon.png' %}" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'nonprofit_search/css/bootstrap.min.css' %}" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{% static 'nonprofit_search/css/animate.css' %}" />
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{% static 'nonprofit_search/css/owl.carousel.min.css' %}" />
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="{% static 'nonprofit_search/css/themify-icons.css' %}" />
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{% static 'nonprofit_search/css/flaticon.css' %}" />
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="{% static 'nonprofit_search/css/magnific-popup.css' %}" />
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="{% static 'nonprofit_search/css/slick.css' %}" />
+    <link rel="stylesheet" href="{% static 'nonprofit_search/css/gijgo.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'nonprofit_search/css/nice-select.css' %}" />
+    <link rel="stylesheet" href="{% static 'nonprofit_search/css/all.css' %}" />
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{% static 'nonprofit_search/css/style.css' %}" />
+  </head>
+
+  <body>
+
+
+    <!-- banner part start-->
+    <section class="banner_part">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="banner_text">
+              <div class="banner_text_iner">
+                
+                <h1 class="main_title">Connect with the right nonprofit for you</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- banner part start-->
+
+    <!-- about part start-->
+    <section class="about_part">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-12">
+            <div class="about_part_iner">
+              <div class="row align-items-center">
+                <div class="col-lg-7">
+                  <div class="about_text">
+                    <h5>About</h5>
+                    <h2></h2>
+                    <p>
+                      Nonprofit organizations provide valuable services to their community, but with over one million nonprofits in the United States, 
+                      how do you find the one that is right for you? Login below and access our nonprofit search.
+                    
+                    </p>
+                    <p>
+                      Whether as a volunteer or a donor, you can support a local organization doing well in your community and help make a difference. 
+                    </p>
+                    <a href="#register_section" class="btn_3">Register or Login</a>
+                  </div>
+                </div>
+                <div class="col-lg-5">
+                  <div class="about_img">
+                    <img src="{% static 'nonprofit_search/img/about.png'%}" alt="ideas" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about part end-->
+    <!--::review_part start::-->
+    <section class="review_part section_padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-5">
+            <div id="register_section">
+              <p>Access</p>
+              <h2>Register or Log In</h2>
+            </div>
+          </div>
+        </div>
+          <div class="col-lg-11 row justify-content-center">
+              <div class="login_reg">
+                  <div id="registration">
+                      <h3>Registration</h3>
+                      <form action="/register" method="POST">
+                        {% csrf_token %}
+                        <p>First name</p>
+                        <p><input type="text" name="f_name"></p>
+                        <p>Last name</p>
+                        <p><input type="text" name="l_name"></p>
+                        <p>Email</p>
+                        <p><input type="email" name="email"></p>
+                        <p>Password</p>
+                        <p><input type="password" name="password"></p>
+                        <p>Confirm Password</p>
+                        <p><input type="password" name="confirm_password"></p>
+                        <p></p>
+                        <p><input type="submit" name="button" value="Register"></p>
+                    </form>
+                  </div>
+                  
+              </div>
+              <div class="login_reg">
+                  <div id="login">
+                      <h3>Login</h3>
+                      <form action="/login" method="POST">
+                        {% csrf_token %}
+                        <p>Email</p>
+                        <p><input type="email" name="log_email"></p>
+                        <p>Password</p>
+                        <p><input type="password" name="log_password"></p>
+                        <p></p>
+                        <input type="submit" value="Login">
+                    </form>
+                  </div>
+              </div>
+        </div>
+    </section>
+    <!--::review_part end::-->
+
+
+    <!-- footer part start-->
+    <footer class="footer-area">
+      <div class="container">
+        <div class="copyright_part_text">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <p class="footer-text m-0">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/slick.min.js"></script>
+    <script src="js/gijgo.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+  </body>
+</html>
